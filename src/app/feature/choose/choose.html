@@ -1,0 +1,33 @@
+<div class="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4 gap-4">
+
+  <!-- Card 1 -->
+  <div class="w-full max-w-sm bg-white rounded-2xl shadow-md p-5 flex flex-col gap-4">
+    <h1 class="text-lg font-semibold text-gray-800">
+      Отдельная работа по предметам
+    </h1>
+
+    <p class="text-sm text-gray-600">
+     Выберите один из 4 предметов и проходите все тесты одновременно!
+    </p>
+
+    <button [routerLink]="'/subjects'"  class="w-full bg-blue-500 text-white py-2 rounded-xl active:scale-95 transition">
+      Перейти к предметам
+    </button>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="w-full max-w-sm bg-white rounded-2xl shadow-md p-5 flex flex-col gap-4">
+    <h1 class="text-lg font-semibold text-gray-800">
+     Работа в смешанной системе, как в ГОСТ
+    </h1>
+
+    <p class="text-sm text-gray-600">
+     Здесь вы выбираете 30 или 50 вопросов, и вам даётся смешанный тест по всем предметам!
+    </p>
+
+    <button [routerLink]="'/home'" class="w-full bg-green-500 text-white py-2 rounded-xl active:scale-95 transition">
+      Перейти к тесту
+    </button>
+  </div>
+
+</div>

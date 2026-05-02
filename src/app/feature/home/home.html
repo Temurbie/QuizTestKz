@@ -1,0 +1,50 @@
+<div class="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-6 space-y-6">
+
+    <!-- Header -->
+    <div class="text-center">
+      <h1 class="text-2xl font-bold text-gray-800">Добро пожаловать,{{userName()}} 👋</h1>
+      <p class="text-gray-500 text-sm mt-1">Выберите настройки, чтобы начать тест</p>
+    </div>
+
+    <!-- Test count -->
+    <div>
+      <label class="block text-sm font-medium text-gray-700 mb-2">
+       Выберите количество вопросов
+      </label>
+      <div class="flex gap-3">
+        <button class="flex-1 py-2 rounded-xl border border-gray-300 hover:bg-blue-50 hover:border-blue-500 transition">
+          30 вопросов
+        </button>
+        <button class="flex-1 py-2 rounded-xl border border-gray-300 hover:bg-blue-50 hover:border-blue-500 transition" (click)="setQ(50)">
+          50 вопросов
+        </button>
+      </div>
+    </div>
+
+    <!-- Time -->
+    <div>
+      <label class="block text-sm font-medium text-gray-700 mb-2">
+        Выберите время теста
+      </label>
+      <div class="flex gap-3">
+        <button class="flex-1 py-2 rounded-xl border border-gray-300 hover:bg-green-50 hover:border-green-500 transition">
+          30 секунд
+        </button>
+        <button class="flex-1 py-2 rounded-xl border border-gray-300 hover:bg-green-50 hover:border-green-500 transition" (click)="setTime(50)">
+          50 секунд
+        </button>
+      </div>
+    </div>
+
+    <!-- Start button -->
+    <div>
+      <button class="w-full py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition shadow"
+      (click)="startTest()">
+        Начать тест 🚀
+      </button>
+      
+    </div>
+
+  </div>
+</div>
