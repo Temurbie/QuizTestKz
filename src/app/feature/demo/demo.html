@@ -5,9 +5,9 @@
     <!-- RESULT PAGE -->
     @if(isFinished()){
       <div class="text-center space-y-4">
-        <h2 class="text-2xl font-bold text-gray-800">Natija</h2>
+        <h2 class="text-2xl font-bold text-gray-800">Нәтиже</h2>
         <p class="text-lg text-gray-600">
-          Вы правильно ответили на {{score()}} из {{total()}}
+          Сіз {{total()}} сұрақтың {{score()}}-іне дұрыс жауап бердіңіз
         </p>
       </div>
     }
@@ -23,12 +23,12 @@
 
       <!-- SAVOL -->
       <h3 class="text-lg font-semibold text-gray-800">
-        {{test.savol}}
+        {{test.question}}
       </h3>
 
       <!-- JAVOB -->
       <div class="space-y-3">
-        @for(j of test.javob; track j.matn){
+        @for(j of test.options; track j.text){
 
           <div
             (click)="selectAnswer(j)"
@@ -40,7 +40,7 @@
               'border-red-500 bg-red-50': isLocked && selectedAnswer === j && !j.correct
             }"
           >
-            {{j.matn}}
+            {{j.text}}
           </div>
 
         }
@@ -50,7 +50,7 @@
       <button
         (click)="nextQuestion()"
         class="w-full py-3 bg-blue-600 text-white rounded-xl mt-4">
-        Далее
+        Келесі
       </button>
 
     }

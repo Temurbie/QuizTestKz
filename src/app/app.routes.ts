@@ -9,8 +9,8 @@ import { Choose } from './feature/choose/choose';
 import { Subjects } from './feature/subjects/subjects';
 import { MUM } from './feature/mum/mum';
 import { BTP } from './feature/btp/btp';
-import { OT } from './feature/ot/ot';
-import { Om } from './feature/om/om';
+import { OT } from './feature/texnalogiya/ot';
+import { Om } from './feature/OTUM/om';
 
 export const routes: Routes = [
     {path : '' , redirectTo: "about", pathMatch: 'full' },
@@ -39,13 +39,13 @@ export const routes: Routes = [
         path: 'mum', component: MUM
     },
     {
-        path: 'btp', component: BTP
-    },
-    {
         path: 'ot', component: OT
     },
     {
-        path: 'om', component: Om
+        path: 'btp', component: OT
+    },
+    {
+        path: 'otum', component: Om
     }
 
 ];

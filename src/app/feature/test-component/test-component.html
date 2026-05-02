@@ -3,14 +3,14 @@
   <!-- RESULT PAGE -->
   @if(isFinished()){
     <div class="w-full max-w-xl bg-white rounded-2xl shadow-lg p-6 text-center space-y-4">
-      <h2 class="text-2xl font-bold text-gray-800">Natija</h2>
+      <h2 class="text-2xl font-bold text-gray-800">Нәтиже</h2>
       <p class="text-lg text-gray-600">
-       Вы правильно ответили на {{score()}} из {{total()}}
+       Сіз {{total()}} сұрақтың {{score()}}-іне дұрыс жауап бердіңіз
       </p>
-           <button
+      <button
         (click)="returnTest()"
         class="w-full py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700">
-       Перезапустить тест
+       Тестті қайта бастау
       </button>
     </div>
   }
@@ -28,7 +28,7 @@
       <!-- Savol -->
       <div class="border-b pb-3 sm:pb-4">
         <h3 class="text-lg sm:text-xl font-semibold text-gray-800">
-          {{test.savol}}
+          {{test.question}}
           @if(test.img){
             <img src="{{test.img}}" alt="IMG">
           }
@@ -36,7 +36,7 @@
       </div>
 
       <!-- Javoblar -->
-      @for(i of test.javob; track i.matn){
+      @for(i of test.options; track i.text){
 
         <label
           (click)="selectAnswer(i)"
@@ -56,7 +56,7 @@
           />
 
           <p class="text-sm sm:text-base">
-            {{i.matn}}
+            {{i.text}}
           </p>
         </label>
 
@@ -66,12 +66,13 @@
       <button
         (click)="nextQuestion()"
         class="w-full py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700">
-        Далее
+        Келесі
       </button>
+
       <button
         (click)="returnTest()"
         class="w-full py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700">
-       Перезапустить тест
+       Тестті қайта бастау
       </button>
     </div>
   }

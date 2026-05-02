@@ -14,11 +14,12 @@
           </p>
 
           <p class="text-sm font-medium text-red-500">
-            ⏱ {{ timer() }} sekund
+            ⏱ {{ timer() }} секунд
           </p>
 
           <h3 class="text-lg font-semibold text-gray-800 mt-2">
-            {{ currentQuetion()?.savol }} <img src="{{currentQuetion()?.img}}" alt="">
+            {{ currentQuetion()?.question}} 
+            <img src="{{currentQuetion()?.img}}" alt="">
           </h3>
 
         }
@@ -28,29 +29,29 @@
       <!-- ANSWERS -->
       <div class="flex flex-col gap-3 mb-5">
 
-  @for(c of currentQuetion()?.javob; track c.matn) {
+        @for(c of currentQuetion()?.options; track c.text) {
 
-    <button
-      (click)="selectAnswer(c)"
-      class="w-full py-3 px-4 rounded-xl border text-left transition active:scale-95"
+          <button
+            (click)="selectAnswer(c)"
+            class="w-full py-3 px-4 rounded-xl border text-left transition active:scale-95"
 
-      [ngClass]="{
-        'bg-green-100 border-green-500':
-          isLocked() && c.correct,
+            [ngClass]="{
+              'bg-green-100 border-green-500':
+                isLocked() && c.correct,
 
-        'bg-red-100 border-red-500':
-          isLocked() && selectedAnswer() === c && !c.correct,
+              'bg-red-100 border-red-500':
+                isLocked() && selectedAnswer() === c && !c.correct,
 
-        'opacity-60 cursor-not-allowed':
-          isLocked()
-      }"
-    >
-      {{ c.matn }}
-    </button>
+              'opacity-60 cursor-not-allowed':
+                isLocked()
+            }"
+          >
+            {{ c.text }}
+          </button>
 
-  }
+        }
 
-</div>
+      </div>
 
       <!-- NEXT BUTTON -->
       <button
@@ -58,7 +59,7 @@
         class="w-full bg-blue-500 text-white py-3 rounded-xl font-medium
                active:scale-95 transition"
       >
-       Далее
+       Келесі
       </button>
 
     } @else {
@@ -67,27 +68,28 @@
       <div class="text-center space-y-3">
 
         <h2 class="text-2xl font-bold text-green-600">
-          Тест завершён 🎉
+          Тест аяқталды 🎉
         </h2>
 
         <p class="text-gray-700">
-          Всего вопросов: <span class="font-semibold">{{ total() }}</span>
+          Барлық сұрақтар: <span class="font-semibold">{{ total() }}</span>
         </p>
 
         <p class="text-green-600">
-          Правильные ответы:<span class="font-semibold">{{ score() }}</span>
+          Дұрыс жауаптар: <span class="font-semibold">{{ score() }}</span>
         </p>
 
         <p class="text-red-500">
-          Неправильно: <span class="font-semibold">{{ total() - score() }}</span>
+          Қате жауаптар: <span class="font-semibold">{{ total() - score() }}</span>
         </p>
-             <button
-        [routerLink]="'/choose'"
-        class="w-full bg-blue-500 text-white py-3 rounded-xl font-medium
-               active:scale-95 transition"
-      >
-        Далее
-      </button>
+
+        <button
+          [routerLink]="'/choose'"
+          class="w-full bg-blue-500 text-white py-3 rounded-xl font-medium
+                 active:scale-95 transition"
+        >
+          Келесі
+        </button>
 
       </div>
 

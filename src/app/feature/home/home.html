@@ -3,21 +3,25 @@
 
     <!-- Header -->
     <div class="text-center">
-      <h1 class="text-2xl font-bold text-gray-800">Добро пожаловать,{{userName()}} 👋</h1>
-      <p class="text-gray-500 text-sm mt-1">Выберите настройки, чтобы начать тест</p>
+      <h1 class="text-2xl font-bold text-gray-800">
+        Қош келдіңіз, {{userName()}} 👋
+      </h1>
+      <p class="text-gray-500 text-sm mt-1">
+        Тестті бастау үшін параметрлерді таңдаңыз
+      </p>
     </div>
 
     <!-- Test count -->
     <div>
       <label class="block text-sm font-medium text-gray-700 mb-2">
-       Выберите количество вопросов
+       Сұрақтар санын таңдаңыз
       </label>
       <div class="flex gap-3">
         <button class="flex-1 py-2 rounded-xl border border-gray-300 hover:bg-blue-50 hover:border-blue-500 transition">
-          30 вопросов
+          30 сұрақ
         </button>
         <button class="flex-1 py-2 rounded-xl border border-gray-300 hover:bg-blue-50 hover:border-blue-500 transition" (click)="setQ(50)">
-          50 вопросов
+          50 сұрақ
         </button>
       </div>
     </div>
@@ -25,7 +29,7 @@
     <!-- Time -->
     <div>
       <label class="block text-sm font-medium text-gray-700 mb-2">
-        Выберите время теста
+        Тест уақытын таңдаңыз
       </label>
       <div class="flex gap-3">
         <button class="flex-1 py-2 rounded-xl border border-gray-300 hover:bg-green-50 hover:border-green-500 transition">
@@ -41,7 +45,7 @@
     <div>
       <button class="w-full py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition shadow"
       (click)="startTest()">
-        Начать тест 🚀
+        Тестті бастау 🚀
       </button>
       
     </div>
